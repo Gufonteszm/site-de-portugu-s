@@ -1,5 +1,5 @@
 # site-de-portugues
-https://gufonteszm.github.io///site-de-portugu-s
+https://gufonteszm.github.io/site-de-portugu-s/
 **Site Em Produção !**
 
 https://startbootstrap.com/previews/grayscale
