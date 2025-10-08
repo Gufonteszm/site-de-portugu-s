@@ -17,3 +17,5 @@ Passos Iniciais:
 Forum:
 
 Qualquer necessidade, coloque seu nome e diga abaixo:
+
+Giovanni: Versão do bootstrap: 5.2
