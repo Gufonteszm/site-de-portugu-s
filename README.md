@@ -12,6 +12,18 @@ Passos Iniciais:
 
 3- desiginar funções a cada um
 
+funções:
+
+Brayan: Textos
+
+Giovanni: Imagens
+
+Gustavo:
+
+Iago:
+
+José:
+
 
 
 Forum:
