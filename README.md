@@ -12,22 +12,17 @@ Passos Iniciais:
 
 3- desiginar funções a cada um
 
-funções:
-
-Brayan: Textos
-
-Giovanni: Imagens
-
-Gustavo:
-
-Iago:
-
-José:
-
-
 
 Forum:
 
 Qualquer necessidade, coloque seu nome e diga abaixo:
 
 Giovanni: Versão do bootstrap: 5.2
+
+Brayan: textos, informações, referências, etc.
+
+Gustavo e iago: índex
+
+José: design, pesquisas e sugestoes
+
+
