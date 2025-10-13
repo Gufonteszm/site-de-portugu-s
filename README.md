@@ -25,3 +25,7 @@ Gustavo e iago: índex
 José: design, pesquisas e sugestoes
 
 
+o que é o bullying
+como ele afeta as pessoas
+como é tratado no livro
+como lidar
