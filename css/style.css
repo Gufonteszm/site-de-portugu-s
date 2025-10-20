@@ -1,7 +1,0 @@
-.text-orange {
-    color: #fd7e14 !important; /* Cor laranja padrão do Bootstrap */
-}
-    header.masthead::before  {
-        color: white;
-        text-shadow: 0 2px 6px rgba(255, 255, 255, 0.89);   
-        }
