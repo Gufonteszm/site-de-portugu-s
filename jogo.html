@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz Bullying - Março Laranja</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
     body {
       background: linear-gradient(135deg, #1a1a1a, #333333);
@@ -29,9 +34,17 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     }
 
-    h1 { margin-bottom: 25px; font-size: 2rem; color: #FFA500; }
+    h1 {
+      margin-bottom: 25px;
+      font-size: 2rem;
+      color: #FFA500;
+    }
 
-    .question { font-size: 1.2rem; margin-bottom: 20px; color: #FFA500; }
+    .question {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #FFA500;
+    }
 
     .options button {
       background: #1a1a1a;
@@ -43,17 +56,26 @@
       font-size: 1rem;
       cursor: pointer;
       font-weight: 500;
-      color: #FFA500;
-      transition: all 0.15s ease;
+      color: #ffffff;
+      transition: all 0.3s ease;
     }
 
-    .options button:hover { background: #FFA500; color: #000; }
+    .options button:hover {
+      background: #FFA500;
+      color: #000;
+    }
 
-    .hidden { display: none; }
+    .hidden {
+      display: none;
+    }
 
-    .result { font-size: 1.3rem; margin-top: 25px; color: #FFA500; }
+    .result {
+      font-size: 1.3rem;
+      margin-top: 25px;
+      color: #FFA500;
+    }
 
-    #start-btn, #next-btn {
+    #start-btn {
       background: #1a1a1a;
       color: #FFA500;
       border: 2px solid #FFA500;
@@ -61,11 +83,49 @@
       padding: 12px 25px;
       font-size: 1rem;
       cursor: pointer;
-      transition: 0.15s ease;
+      transition: 0.3s ease;
       margin-bottom: 25px;
     }
 
-    #start-btn:hover, #next-btn:hover { background: #FFA500; color: #000; }
+    #start-btn:hover {
+      background: #FFA500;
+      color: #000;
+    }
+
+    #next-btn {
+      background: #1a1a1a;
+      color: #FFA500;
+      border: 2px solid #FFA500;
+      border-radius: 12px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 10px;
+      display: none;
+      transition: 0.3s ease;
+    }
+
+    #next-btn:hover {
+      background: #FFA500;
+      color: #000;
+    }
+
+    #back-btn {
+      background: #1a1a1a;
+      color: #FFA500;
+      border: 2px solid #FFA500;
+      border-radius: 12px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 30px;
+      transition: 0.3s ease;
+    }
+
+    #back-btn:hover {
+      background: #FFA500;
+      color: #000;
+    }
   </style>
 </head>
 <body>
@@ -80,16 +140,21 @@
     </div>
   </div>
 
+  <!-- Botão para voltar -->
+  <button id="back-btn" onclick="window.location.href='index.html'">Voltar à Página Principal</button>
+
   <script>
     const quizData = [
-      { question: 'Qual é a forma mais silenciosa de bullying frequentemente ignorada?', options: ['Exclusão social', 'Comentários maldosos', 'Brigas físicas', 'Competição escolar'], answer: 0 },
-      { question: 'Qual atitude pode efetivamente apoiar uma vítima de bullying?', options: ['Ignorar para evitar problemas', 'Conversar com um adulto confiável', 'Participar da brincadeira', 'Postar vídeos online'], answer: 1 },
-      { question: 'Qual impacto psicológico pode ser causado pelo bullying prolongado?', options: ['Aumento da autoestima', 'Ansiedade e depressão', 'Maior popularidade', 'Melhoria acadêmica'], answer: 1 },
-      { question: 'Qual comportamento NÃO caracteriza bullying?', options: ['Ações de gentileza', 'Cyberbullying', 'Agressões verbais', 'Exclusão social'], answer: 0 },
-      { question: 'Qual é a responsabilidade da escola no enfrentamento do bullying?', options: ['Criar programas educativos e acolher vítimas', 'Punir apenas o aluno vítima', 'Ignorar situações', 'Deixar alunos resolverem sozinhos'], answer: 0 }
+      { question: 'Qual é a forma mais comum de bullying entre adolescentes?', options: ['Brigas físicas', 'Isolamento social', 'Competição escolar', 'Comentários maldosos na internet'], answer: 3 },
+      { question: 'Qual atitude é mais eficaz para interromper o bullying de forma segura?', options: ['Reportar a um adulto confiável', 'Participar da piada', 'Fingir que não viu', 'Confrontar fisicamente o agressor'], answer: 0 },
+      { question: 'O bullying pode ter quais consequências psicológicas graves?', options: ['Melhora na socialização', 'Desempenho acadêmico garantido', 'Ansiedade e depressão', 'Aumento da popularidade'], answer: 2 },
+      { question: 'Qual destas não é considerada forma de bullying?', options: ['Exclusão social', 'Atos de gentileza', 'Cyberbullying', 'Agressões verbais'], answer: 1 },
+      { question: 'Qual é o papel da escola no combate ao bullying?', options: ['Criar campanhas educativas e acolher vítimas', 'Punir apenas as vítimas', 'Ignorar para evitar confusão', 'Deixar os alunos resolverem sozinhos'], answer: 0 }
     ];
 
-    function shuffleArray(arr) { return arr.sort(() => Math.random() - 0.5); }
+    function shuffleArray(arr) {
+      return arr.sort(() => Math.random() - 0.5);
+    }
 
     let currentQuestion = 0;
     let score = 0;
@@ -118,16 +183,21 @@
       shuffledOptions.forEach(optionText => {
         const btn = document.createElement('button');
         btn.textContent = optionText;
-        btn.onclick = () => checkAnswer(optionText, current.options[current.answer]);
+        btn.onclick = () => checkAnswer(btn, optionText, current.options[current.answer]);
         optionsEl.appendChild(btn);
       });
     }
 
-    function checkAnswer(selected, correctAnswer) {
+    function checkAnswer(selectedBtn, selected, correctAnswer) {
       Array.from(optionsEl.children).forEach(btn => {
         btn.disabled = true;
-        if (btn.textContent === correctAnswer) btn.style.background = '#4CAF50', btn.style.color = '#000';
-        else if (btn.textContent === selected && selected !== correctAnswer) btn.style.background = '#f44336', btn.style.color = '#fff';
+        if (btn.textContent === correctAnswer) {
+          btn.style.borderColor = '#4CAF50';
+        } else if (btn === selectedBtn && selected !== correctAnswer) {
+          btn.style.borderColor = '#f44336';
+        } else {
+          btn.style.opacity = '0.7';
+        }
       });
       if (selected === correctAnswer) score++;
       nextBtn.style.display = 'inline-block';
@@ -135,8 +205,11 @@
 
     nextBtn.onclick = () => {
       currentQuestion++;
-      if (currentQuestion < quizData.length) loadQuestion();
-      else showResult();
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        showResult();
+      }
     };
 
     function showResult() {
