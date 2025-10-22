@@ -1,0 +1,55 @@
+
+                <section class="exemplos" id="exemplos">
+                    <h4 class="exemplos-text">
+                        Exemplos de superação – vítimas famosas
+                    </h4>
+                    <p>
+                        Diversos artistas sofreram bullying e transformaram a dor em arte. Jessica Alba, Christian Bale e Marina Ruy Barbosa relataram experiências de exclusão. Thom Yorke, vocalista do Radiohead, enfrentou bullying por causa de um problema ocular e canalizou sua dor na música ‘Creep’, símbolo de autossuperação.
+                    </p>
+                </section>
+
+                <section>
+                    <h4 class="problemas" id="problemas">
+                        Problemas futuros causados pelo bullying 
+                    </h4>
+                    <p>
+                        O bullying pode gerar traumas duradouros, depressão, ansiedade, distúrbios alimentares, baixa autoestima e risco de suicídio. A exposição prolongada à violência escolar prejudica o desenvolvimento emocional e profissional do indivíduo.
+                    </p>
+                </section>
+
+                <section>
+                    <h4 class="" id="">
+                        Estatísticas do bullying no Brasil e no mundo
+                    </h4>
+                    <p>
+                        A UNESCO aponta que um terço dos estudantes no mundo sofre bullying regularmente. No Brasil, o IBGE revela 39% de casos entre adolescentes, e o UNICEF indica que o país lidera em índices de cyberbullying. A OCDE classifica o Brasil entre os 20 países com mais casos em escolas.
+                    </p>
+                </section>
+
+                <section>
+                    <h4 class="" id="">
+                        Países com piores índices
+                    </h4>
+                    <p>
+                        Costa Rica, Chile e Brasil aparecem entre os países com maior incidência de bullying escolar. Fatores como desigualdade social, violência urbana e pressão por status social influenciam esses resultados.
+                    </p>
+                </section>
+
+                <section>
+                    <h4 class="" id="">
+                        Políticas públicas e propostas eficazes
+                    </h4>
+                    <p>
+                        O Brasil criou o Programa Nacional de Combate à Intimidação Sistemática (Lei 13.185/2015). Experiências como o programa KiVa, na Finlândia, e o School Climate Reform nos EUA mostram que ações coordenadas, diálogo e empatia reduzem significativamente o bullying.
+                    </p>
+                </section>
+
+                <section>
+                    <h4 class="" id="">
+                        Conclusão
+                    </h4>
+                    <p>
+                        O bullying é um fenômeno social e psicológico complexo que exige resposta integrada da sociedade. Envolve causas culturais, emocionais e estruturais, mas pode ser combatido com políticas públicas consistentes, educação emocional e fortalecimento dos laços familiares e escolares.
+                    </p>
+                </section>
+            </main>
