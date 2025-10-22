@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Bullying - Março Laranja</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+    body {
+      background: linear-gradient(135deg, #1a1a1a, #333333);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: #FFA500;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .quiz-container {
+      background: #000;
+      border-radius: 25px;
+      width: 90%;
+      max-width: 550px;
+      padding: 40px 30px;
+      text-align: center;
+      color: #FFA500;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    h1 { margin-bottom: 25px; font-size: 2rem; color: #FFA500; }
+
+    .question { font-size: 1.2rem; margin-bottom: 20px; color: #FFA500; }
+
+    .options button {
+      background: #1a1a1a;
+      border: 2px solid #FFA500;
+      border-radius: 12px;
+      padding: 12px;
+      margin: 8px 0;
+      width: 100%;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: 500;
+      color: #FFA500;
+      transition: all 0.15s ease;
+    }
+
+    .options button:hover { background: #FFA500; color: #000; }
+
+    .hidden { display: none; }
+
+    .result { font-size: 1.3rem; margin-top: 25px; color: #FFA500; }
+
+    #start-btn, #next-btn {
+      background: #1a1a1a;
+      color: #FFA500;
+      border: 2px solid #FFA500;
+      border-radius: 12px;
+      padding: 12px 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.15s ease;
+      margin-bottom: 25px;
+    }
+
+    #start-btn:hover, #next-btn:hover { background: #FFA500; color: #000; }
+  </style>
+</head>
+<body>
+  <h1>Quiz: Combate ao Bullying</h1>
+  <button id="start-btn">Iniciar Quiz</button>
+  <div class="quiz-container hidden" id="quiz-box">
+    <div id="quiz">
+      <div class="question" id="question"></div>
+      <div class="options" id="options"></div>
+      <button id="next-btn">Próxima</button>
+      <div id="result" class="result hidden"></div>
+    </div>
+  </div>
+
+  <script>
+    const quizData = [
+      { question: 'Qual é a forma mais silenciosa de bullying frequentemente ignorada?', options: ['Exclusão social', 'Comentários maldosos', 'Brigas físicas', 'Competição escolar'], answer: 0 },
+      { question: 'Qual atitude pode efetivamente apoiar uma vítima de bullying?', options: ['Ignorar para evitar problemas', 'Conversar com um adulto confiável', 'Participar da brincadeira', 'Postar vídeos online'], answer: 1 },
+      { question: 'Qual impacto psicológico pode ser causado pelo bullying prolongado?', options: ['Aumento da autoestima', 'Ansiedade e depressão', 'Maior popularidade', 'Melhoria acadêmica'], answer: 1 },
+      { question: 'Qual comportamento NÃO caracteriza bullying?', options: ['Ações de gentileza', 'Cyberbullying', 'Agressões verbais', 'Exclusão social'], answer: 0 },
+      { question: 'Qual é a responsabilidade da escola no enfrentamento do bullying?', options: ['Criar programas educativos e acolher vítimas', 'Punir apenas o aluno vítima', 'Ignorar situações', 'Deixar alunos resolverem sozinhos'], answer: 0 }
+    ];
+
+    function shuffleArray(arr) { return arr.sort(() => Math.random() - 0.5); }
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    const startBtn = document.getElementById('start-btn');
+    const quizBox = document.getElementById('quiz-box');
+    const questionEl = document.getElementById('question');
+    const optionsEl = document.getElementById('options');
+    const nextBtn = document.getElementById('next-btn');
+    const resultEl = document.getElementById('result');
+
+    startBtn.addEventListener('click', () => {
+      startBtn.classList.add('hidden');
+      quizBox.classList.remove('hidden');
+      loadQuestion();
+    });
+
+    function loadQuestion() {
+      const current = quizData[currentQuestion];
+      questionEl.textContent = current.question;
+      optionsEl.innerHTML = '';
+      resultEl.classList.add('hidden');
+      nextBtn.style.display = 'none';
+
+      const shuffledOptions = shuffleArray([...current.options]);
+      shuffledOptions.forEach(optionText => {
+        const btn = document.createElement('button');
+        btn.textContent = optionText;
+        btn.onclick = () => checkAnswer(optionText, current.options[current.answer]);
+        optionsEl.appendChild(btn);
+      });
+    }
+
+    function checkAnswer(selected, correctAnswer) {
+      Array.from(optionsEl.children).forEach(btn => {
+        btn.disabled = true;
+        if (btn.textContent === correctAnswer) btn.style.background = '#4CAF50', btn.style.color = '#000';
+        else if (btn.textContent === selected && selected !== correctAnswer) btn.style.background = '#f44336', btn.style.color = '#fff';
+      });
+      if (selected === correctAnswer) score++;
+      nextBtn.style.display = 'inline-block';
+    }
+
+    nextBtn.onclick = () => {
+      currentQuestion++;
+      if (currentQuestion < quizData.length) loadQuestion();
+      else showResult();
+    };
+
+    function showResult() {
+      questionEl.classList.add('hidden');
+      optionsEl.classList.add('hidden');
+      nextBtn.style.display = 'none';
+      resultEl.classList.remove('hidden');
+      resultEl.innerHTML = `Você acertou <b>${score}</b> de <b>${quizData.length}</b> perguntas!<br><br>${
+        score === quizData.length ? 'Excelente! Você entende bem sobre o combate ao bullying. ❤️' : 'Continue aprendendo e ajudando a combater o bullying! 🤝'
+      }`;
+    }
+  </script>
+</body>
+</html>
