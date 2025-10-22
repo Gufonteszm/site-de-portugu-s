@@ -1,1 +1,54 @@
+body {
+    background-color: #141414 !important;
+}
+
+.s1-container {
+  gap: 30px;
+}
+
+
+.s1-container h4 {
+  font-size: 40px;
+  color: orange;
+  text-align: center;
+}
+
+
+.s1-container p {
+max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+    color: #ffffff;
+}
+.text-orange{
+  color: orange;
+}
+.pdd{
+  padding: 40px;
+}
+
+.h-100 {
+    height: 400px !important; 
+}
+
+.card {
+    border: 0;
+    border-bottom: 0.25rem solid orange;
+}
+
+.card a {}
+
+.contact-section {
+    background-color: #141414 !important;
+}
+
+.text-uppercase {
+    font-size: 18px !important; 
+    color: orange !important; 
+}
+
+.text-black-50 {
+    font-size: 25px !important;
+} 
 
