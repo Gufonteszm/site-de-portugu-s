@@ -1,0 +1,8 @@
+1. Adicionar conteudo ao sobre
+2. Adicionar conteudo sobre o livro
+3. colocar o card de exemplos famosos
+4. fazer os cards com os dados sobre bullying
+5. adicionar botões apresentando dados com gráficos e afins
+6. colocar parte sobre como identificar o bullying para a interação dos responsáveis
+7. adicionar os integrantes
+8. adicionar o github de cada um e o instagram da sala
